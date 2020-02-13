@@ -57,8 +57,8 @@ There is an option to create up to three playlists for favourites.
 | `GET`      | `/profile/:id/edit`| Private route. Renders `user-views/edit` form view. 
 | `POST`      | `/profile/:id/edit`| Private route. Sends edit-profile info to server and updates user in DB. Redirects to the `user-views/profile` view (url: /profile/:id).
 | `DELETE`   | `/profile/:id/delete`| Private route. Deletes the profile from the server and updates DB. Redirects to the `auth-views/login`.
-| `GET`     | `/user-playlist/create` | Private route. Renders the `user-playlist/create` form view to add a new playlist for the current user. 
-| `POST`     | `/user-playlist/add`  | Private route. Adds a new playlist for the current user. Redirects to the `user-views/options`.  
+| `GET`     | `/user-playlist-views/create` | Private route. Renders the `user-playlist-views/create` form view to add a new playlist for the current user. 
+| `POST`     | `/user-playlist-views/add`  | Private route. Adds a new playlist for the current user. Redirects to the `user-views/options`.  
 | `GET`   | `/tracks-views/:id` | Private route. Renders the new `tracks-views/show` view with track added.
 | `POST`   | `/tracks-views/show` | Private route. Renders the current playlist in the DB.
 | `DELETE`   | `/tracks-views/edit` | Private route. Deletes track from user's playlist.
