@@ -51,7 +51,7 @@ There is an option to create up to three playlists for favourites.
 | `POST`     | `/login`  | Sends Login form data to the server. Redirects to the `index` view (url: `/`).        
 | `GET`      | `/signup` | (public) Renders `auth-views/signup` form view.             
 | `POST`     | `/signup` | Sends Sign Up info to the server and creates user in the DB. Redirects to the `index` view (url: `/`).
-| `GET`   | `\`  | Renders the index view.
+| `GET`   | `/`  | Renders the index view.
 | `GET`      | `/signout` | (public) Renders the home `auth-views/login` view.     
 | `GET`      | `/profile/:id`| Private route. Renders `user-views/profile` view.
 | `GET`      | `/profile/:id/edit`| Private route. Renders `user-views/edit` form view. 
