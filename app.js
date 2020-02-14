@@ -5,10 +5,7 @@ var cookieParser = require('cookie-parser');
 const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 var logger        =  require('morgan');
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var loginRouter = require('./routes/login');
+const router = require('./routes/index');
 
 var app = express();
 
@@ -48,9 +45,7 @@ app.use(
   })
 );
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/login', loginRouter);
+app.use('/', router); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -67,5 +62,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;
