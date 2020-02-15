@@ -1,5 +1,5 @@
 const express = require('express');
-const signupRouter  = express.Router();
+const signupRouter = express.Router();
 const User = require('../models/User')
 const bcrypt = require('bcrypt')
 const zxcvbn = require("zxcvbn");
@@ -12,19 +12,22 @@ signupRouter.get('/', (req, res, next) => {
 
 //POST route to get data
 signupRouter.post('/', (req, res, next) => {
-    const { username, email, password} = req.body;
+    const { username, email, password } = req.body;
     console.log("Print req.body", req.body)
-    if(username === "" || email === "" || password === ""){
-        res.render("auth-views/signup", { errorMessage: "Please provide the required username and password"})
-        return;
-    };
+    if (username === "" || email === "" || password === ""){
+        res.render("auth-views/signup", {
+          errorMessage: "Please provide the required username and password"
+    });
+    return;
+};
 
     //Check if user already exists
     User.findOne({username})
     .then( (user) => {
         if(user!== null) {
             res.render("auth-views/signup", {
-                errorMessage: "This username is already taken, please choose another username"});
+              errorMessage: "This username is already taken, please choose another username"
+            });
             return;
          };
     

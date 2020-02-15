@@ -1,13 +1,13 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
 const hbs          = require('hbs');
 const mongoose     = require('mongoose');
-var logger        =  require('morgan');
+const logger        =  require('morgan');
 const router = require('./routes/index');
 
-var app = express();
+const app = express();
 
 const session    = require("express-session");
 const MongoStore = require("connect-mongo")(session);
