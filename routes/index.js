@@ -7,13 +7,13 @@ var signupRouter  = require('./signup');
 
 
 router.use('/users', usersRouter);
-router.use('/login', loginRouter);
+router.use('/', loginRouter);
 router.use('/signup', signupRouter);
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
+  res.render('auth-views/login');
 });
 
 
