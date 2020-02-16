@@ -18,6 +18,14 @@ siteRouter.get('/player', (req, res) => {
     res.render('player')
 })
 
+siteRouter.get('/playlist', (req, res) => {
+    res.render('playlist')
+})
+
+siteRouter.get('/profile', (req, res) => {
+    res.render('profile')
+})
+
 siteRouter.get('/logout', (req, res) => {
   req.session.destroy( (err) => {
     res.redirect('/')
