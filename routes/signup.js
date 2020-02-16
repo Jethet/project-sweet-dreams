@@ -40,7 +40,7 @@ signupRouter.post('/', (req, res, next) => {
             req.session.currentUser = createdUser;  // this creates a session for user to be logged in right after signup
             console.log('INSIDE');
             
-            res.redirect('/')
+            res.redirect('/home')
         })
         .catch(err => console.log(err))
     });
