@@ -22,6 +22,11 @@ siteRouter.get('/playlist', (req, res) => {
     res.render('playlist')
 })
 
+siteRouter.get('/track', (req, res) => {
+  res.render('track')
+})
+
+
 siteRouter.get('/profile', (req, res) => {
     res.render('profile')
 })
