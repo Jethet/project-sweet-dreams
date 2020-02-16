@@ -33,7 +33,7 @@ loginRouter.post('/', (req, res, next) => {
     if (passwordCorrect) {
         req.session.currentUser = user;
         console.log(user)
-        res.redirect('/')
+        res.redirect('/home')
         } else {
         res.render("auth-views/login", {
             errorMessage: "Incorrect password"
