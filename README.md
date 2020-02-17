@@ -32,10 +32,9 @@ There is an option to create up to three playlists for favourites.
 ## Minimal Viable Product (MVP)
 1. Sign-up, log-in, log-out functionality.
 2. Profile page with options to add avatar/picture, dropdown menu for editing username, changing password or deleting account
-3. Navbar with buttons for homepage, option page, playlist page, profile page, plus logout.
-4. Homepage with clickable images that link to music playlist that starts playing immediately.
-5. Player page with display of track information, timer, button to add tracks to playlist, timeline of playtime.
-6. Playlist page with an overview of user's playlist(s), buttons to edit playlist and button to add new playlist, and explanation of maximum number of playlists.
+3. Homepage with clickable images that link to music playlist that starts playing immediately.
+4. Player page with display of track information, timer, button to add tracks to playlist, timeline of playtime.
+5. Playlist page with an overview of user's playlist(s), buttons to edit playlist and button to add new playlist, and explanation of maximum number of playlists.
 
 
 <br>
