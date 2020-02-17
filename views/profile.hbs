@@ -6,29 +6,30 @@
 
 
     <p>Username</p>
-    <button id="edit-username-button">Edit username</button>
+    <button id="edit-button">Edit username</button>
     <!--  UPDATE  -->
-    <div id="username-update-section" style="display: none">
-    <form id="username-update-form">
-        <input type="text" name="name" class="the-name" placeholder="name"><br> 
-        <button>New username</button>
+    <div id="update-section" style="display: none">
+    <form action ="/profile/edit" id="username-update-form" method="POST">
+        <input type="text" name="name" class="the-name" value="username"><br> 
+        <input type="text" name="password" class="the-name" placeholder="*****"><br> 
+        <button type="submit">New username</button>
     </form>
   </div>
     <br>
     <br>
 
     <p>Password</p>
-    <button id="edit-password-button">Edit password</button>
-    <div id="password-update-section" style="display: none">
+    {{!-- <button id="edit-password-button">Edit password</button> --}}
+    {{!-- <div id="password-update-section" style="display: none">
     <form id="password-update-form">
         <input type="text" name="name" class="the-name" placeholder="name"><br> 
         <button>New password</button>
     </form>
-  </div>
+  </div> --}}
     <br>
     <br>
 
-    <a href="/">
+    <a href="/logout">
     <button>Log out</button>
     </a> 
     <br>
