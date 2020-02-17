@@ -7,7 +7,7 @@ var signupRouter  = require('./signup');
 var homeRouter = require('./home');
 // var playerRouter = require('/player');
 // var playlistRouter = require('/playlist');
-var profileRouter = require('/profile');
+var profileRouter = require('./profile');
 
 
 router.use('/users', usersRouter);

@@ -6,21 +6,25 @@
 
 
     <p>Username</p>
-    <button>Edit username</button>
+    <button id="edit-username-button">Edit username</button>
     <!--  UPDATE  -->
-    <div id='update-section' style="display: none">
-    <form id="update-form">
-        <input type="text" name="name" class="the-name" placeholder="name"><br>
-        
-        <button> Update </button>
+    <div id="username-update-section" style="display: none">
+    <form id="username-update-form">
+        <input type="text" name="name" class="the-name" placeholder="name"><br> 
+        <button>New username</button>
     </form>
-    
   </div>
     <br>
     <br>
 
     <p>Password</p>
-    <button>Edit password</button>
+    <button id="edit-password-button">Edit password</button>
+    <div id="password-update-section" style="display: none">
+    <form id="password-update-form">
+        <input type="text" name="name" class="the-name" placeholder="name"><br> 
+        <button>New password</button>
+    </form>
+  </div>
     <br>
     <br>
 
@@ -33,3 +37,5 @@
     <a href="/">
     <button>Delete account</button>
     </a> 
+
+<script src="/javascripts/profile.js"></script>
