@@ -1,7 +1,7 @@
 var express = require('express');
 const siteRouter = require('./home');
 // var playerRouter = express.Router();
-const User = require('../models/User');
+// const User = require('./../models/User');
 
 
 
