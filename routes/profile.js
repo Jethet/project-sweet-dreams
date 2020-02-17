@@ -16,12 +16,12 @@ profileRouter.get('/', (req, res, next) => {
 })
 
 profileRouter.post('/edit',(req,res, next)=>{
-    const {username, password} = req.body;
+    const {username} = req.body;
     const id = req.session.currentUser._id;
-    const salt = bcrypt.genSaltSync(saltRounds);  
-    const hashedPassword = bcrypt.hashSync(password, salt);
+    // const salt = bcrypt.genSaltSync(saltRounds);  
+    // const hashedPassword = bcrypt.hashSync(password, salt);
 
-    User.updateOne({_id: id},{username, password: hashedPassword})
+    User.updateOne({_id: id},{username})
     .then(user =>{
         res.redirect('/profile')
     })
