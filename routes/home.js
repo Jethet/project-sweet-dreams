@@ -1,43 +1,31 @@
+// routes/home.js
 var express = require('express');
 var siteRouter = express.Router();
-
+const profileRouter = require('./profile');
+const playlistRouter = require('./playlist');
+const playerRouter = require('./player');
 // AUTHENTICATION CHECKER
-function isLoggedIn (req, res, next) {
-  if (req.session.currentUser)
-  {
-    next();
-  } 				
-  else {         
-  	res.redirect("/");   
-  }     
-};					
-
-siteRouter.get('/home', isLoggedIn, (req, res) => {
+siteRouter.use((req, res, next) => {
+  if (req.session.currentUser) { // <== if there's user in the session (user is logged in)
+    next(); // ==> go to the next route ---
+  } 																//		|
+  else {                          	//    |
+  	res.redirect("/login");       	//    |
+  }                                 //    |
+});																	//		|
+	// 	 ------------------------------------
+    // |
+    // V
+siteRouter.use('/profile', profileRouter)
+siteRouter.use('/playlist', playlistRouter)
+siteRouter.use('/player', playerRouter)
+siteRouter.get('/home', (req, res, next) => {
   res.render('home')
 })
-
-// siteRouter.get('/player', (req, res) => {
-//     res.render('player')
-// })
-
-// siteRouter.get('/playlist', (req, res) => {
-//     res.render('playlist')
-// })
-
-// siteRouter.get('/track', (req, res) => {
-//   res.render('track')
-// })
-
-
-siteRouter.get('/profile', (req, res) => {
-    res.render('profile')
-})
-
-siteRouter.get('/logout',isLoggedIn, (req, res) => {
+siteRouter.get('/logout', (req, res, next) => {
   req.session.destroy( (err) => {
-    res.redirect('/')
+    console.log('YOU HAVE BEEN LOGGED OUT');
+    res.redirect('/');
   })
-
 })
-
 module.exports = siteRouter;

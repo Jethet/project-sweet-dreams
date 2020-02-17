@@ -1,15 +1,13 @@
+// routes/login.js
 var express = require('express');
-const siteRouter = require('./home');
 var loginRouter = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
-
-/* GET home page. */
+// GET /login
 loginRouter.get('/', function(req, res, next) {
     res.render('auth-views/login');
-  });
- 
-
+});
+// POST /login
 loginRouter.post('/', (req, res, next) => {
     const { username, password} = req.body;
     console.log("Print req.body", req.body)
@@ -27,10 +25,8 @@ loginRouter.post('/', (req, res, next) => {
         });
         return;
     }
-
     const passwordFromDB = user.password;
     const passwordCorrect = bcrypt.compareSync(password, passwordFromDB);
-
     if (passwordCorrect) {
         req.session.currentUser = user;
         console.log(user)
@@ -42,7 +38,4 @@ loginRouter.post('/', (req, res, next) => {
         }
     }) .catch(err => console.log(err));
 });
-
-
-
 module.exports = loginRouter;

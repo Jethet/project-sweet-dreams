@@ -1,7 +1,7 @@
+// routes/profile.js
 var express = require('express');
-const siteRouter = require('./home');
 var profileRouter = express.Router();
-var loginRouter = require('./login')
-
-
+profileRouter.get('/', (req, res, next) => {
+  res.render('profile')
+})
 module.exports = profileRouter;
