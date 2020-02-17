@@ -7,13 +7,14 @@ const mongoose     = require('mongoose');
 const logger        =  require('morgan');
 const router = require('./routes/index');
 
+require('dotenv').config();
 const app = express();
 
 const session    = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 
 mongoose
-  .connect('mongodb://localhost/sweet-dreamsDB', {useNewUrlParser: true})
+  .connect(process.env.MONGODB_URI, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -34,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(
   session({
-    secret: "basic-auth-secret",
+    secret: process.env.SESSION_SECRET ,
     // cookie: { maxAge: 3600000 * 1 },	// 1 hour
     resave: true,
     saveUninitialized: false,
