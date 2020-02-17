@@ -1,5 +1,5 @@
 const inputUsernameForm = document.querySelector("#update-section");
-// const inputPasswordForm = document.querySelector("#password-update-section");
+const inputPasswordForm = document.querySelector("#password-update-section");
 const editUsernameButton = document.querySelector("#edit-username-button");
 const editPasswordButton = document.querySelector('#edit-password-button')
 
