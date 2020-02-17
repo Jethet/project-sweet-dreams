@@ -1,8 +1,8 @@
 var express = require('express');
+const siteRouter = require('./home');
 var loginRouter = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
-const siteRouter = require('./home');
 
 /* GET home page. */
 loginRouter.get('/', function(req, res, next) {
