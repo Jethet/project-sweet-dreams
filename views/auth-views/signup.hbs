@@ -6,27 +6,30 @@
     <title>Document</title>
 </head>
 <body>
-   <form action="/" method="POST" id="form">
+   <form action="/signup" method="POST" id="form">
    
-        <h2>Login</h2>
+        <h2>Signup</h2>
         <label for="username">Username</label>
         <input type="text" name="username">
+
+        <label for="email">Email</label>
+        <input type="email" name="email">
 
         <label for="password">Password</label>
         <input type="text" name="password">
 
-        <button type="submit">Log in</button>
    
-    </form> 
+    <button type="submit">Sign up</button>
 
-     {{#if errorMessage}}
+  </form> 
+
+    {{#if errorMessage}}
 
     <p>{{errorMessage}}</p>
     
     {{/if}}
-
     <p>
-    <a href="/signup">Don't have an account? Sign up!</a> 
+    <a href="/">Already have an account? Log in</a> 
     </p>
 
 
