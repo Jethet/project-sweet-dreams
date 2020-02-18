@@ -23,6 +23,47 @@ a {
   background-size: cover;
 }
 
+#background-image-login {
+  height: 100vh;
+  background-image: url("/images/playlist.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#background-image-signup {
+  height: 100vh;
+  background-image: url("/images/mandolin.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.form-size {
+  width: 80%;
+  padding: 75px 25px;
+  color: cornsilk;
+ }
+
+#login-submit-button {
+  background-color: #fffffe;
+  color: grey;
+  border-radius: 15%;
+  transition-duration: 0.4s;
+}
+
+#login-submit-button:hover {
+  cursor: pointer;
+}
+
+#username, #email, #password {
+  font-size: 16px;
+}
+
+.form-group {  
+  font-size: 20px;
+}
+
 .text-index-page {
   color: cornsilk;
   text-align: center;
@@ -48,6 +89,13 @@ a {
   color: cornsilk;
 }
 
+.signup-link {
+  color: cornsilk;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+
 .profile-button {
   transition-duration: 0.4s;
   border: none;
@@ -65,10 +113,10 @@ a {
   text-align: center;
   max-height: 15%;
   z-index: 10000;
-  padding-top: 10px;
-  padding-left: 20px;
+  /* padding-left: 20px; */
   padding-right: 20px;
 }
+
 
 #cards-container {
   max-height: 85%;
