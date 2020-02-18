@@ -5,9 +5,9 @@
 <br><br><br>
 {{#each track}}
     <h1>{{this.name}}</h1>
-    <audio controls>
+    {{!-- <input type="button" value="PLAY" onclick="playAudio()"> --}}
+    <audio class="audio" controls>
         <source src="{{this.previewURL}}" type="audio/mpeg">
-        Your browser does not support the audio tag.
     </audio>
     {{#if ../userHasPlaylists}}
         <form action="/playlist/add/{{this.id}}" method = "POST">
@@ -27,6 +27,6 @@
     </form>
 {{/each}}
 
-<a href="/playlist">Playlist<s/a>
+<a href="/playlist">Playlist</a>
 
 <script src="/javascripts/playerScript.js"></script>
