@@ -18,10 +18,20 @@ playlistRouter.get('/',(req, res, next) =>{
 playlistRouter.post('/add/:trackId',(req, res, next)=>{
     const trackId = req.params.trackId;
     const {playlist} = req.body;
-
-    Playlist.update({_id: playlist},{$addToSet: {tracks: trackId}},{new: true})
-    .then( () => res.redirect("/playlist"))
-    .catch( (err) => console.log(err));
+    axios.get(`https://api.napster.com/v2.0/tracks/${trackId}?apikey=ZTk2YjY4MjMtMDAzYy00MTg4LWE2MjYtZDIzNjJmMmM0YTdm&limit=200`)
+    .then((result) => {
+        const trackInfo = result.data.tracks[0];
+        const data = {
+            trackId: trackId,
+            trackName: trackInfo.name,
+            trackArtist: trackInfo.artistName
+        }
+        Playlist.update({_id: playlist},{$addToSet: {tracks: data}},{new: true})
+        .then( () => res.redirect("/playlist"))
+        .catch( (err) => console.log(err));
+    })
+    .catch((err) => console.log(err));
+   
 })
 
 playlistRouter.post('/create',(req, res, next)=>{
@@ -45,27 +55,9 @@ playlistRouter.get('/:playlistId',(req, res, next)=>{
     Playlist.findById(playlistId)
     .then((playlist) => {
         const tracksArr = playlist.tracks;
-        console.log("tracksArr",tracksArr);
-
-        tracksArr.forEach(track=> {
-            axios.get(`https://api.napster.com/v2.0/tracks/${track}?apikey=ZTk2YjY4MjMtMDAzYy00MTg4LWE2MjYtZDIzNjJmMmM0YTdm&limit=200`)
-            .then((result) => {
-                const trackDetailsArr = [];
-                const trackObj = {};
-                const resultArr = result.data.tracks;
-                resultArr.forEach(trackInfo =>{
-                    trackObj.trackName = trackInfo.name;
-                    trackObj.artistName = trackInfo.artistName;
-                    trackDetailsArr.push(trackObj);
-                })
-                console.log("arr",trackDetailsArr);
-                res.render("playlistDetails",{trackDetailsArr});
-            }).catch((err) => {
-                
-            });
-        });
-    }).catch((err) => {
-        
-    });
+        res.render("playlistDetails",{tracksArr}); 
+    })
+    .catch(err=>console.log(err));
 })
+
 module.exports = playlistRouter;

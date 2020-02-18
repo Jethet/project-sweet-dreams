@@ -1,5 +1,11 @@
 <h1>playlist Details</h1>
-{{#each trackDetailsArr}}
-    {{this.trackName}}
-    {{this.artistName}}
+{{#each tracksArr}}
+    <p>TrackName {{this.trackName}}</p>
+    <br>
+    <p>ArtistName {{this.trackArtist}}</p>
+    <br>
 {{/each}}
+
+<a href="/player/id">
+    <button>Play the playlist</button>
+</a>
