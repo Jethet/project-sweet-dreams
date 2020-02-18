@@ -1,13 +1,119 @@
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Kaushan Script', cursive, Helvetica, sans-serif;
 }
 
 a {
   color: #00B7FF;
 }
 
-img {
-  width: 150px;
-  height: 150px;
+#background-image-index {
+  height: 100vh;
+  background-image: url("/images/sunset.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+#background-image-home {
+  height: 100vh;
+  background-image: url("/images/nature2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text-index-page {
+  color: cornsilk;
+  text-align: center;
+  padding: 75px;
+  max-height: 80%;
+}
+
+.index-page-button {
+  transition-duration: 0.4s;
+  background-color: rgba(128, 2, 13, 0.575);
+  border: none;
+  border-radius: 45%;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  max-height: 20%;
+}
+
+.index-page-button:hover {
+  background-color: rgb(99, 3, 3);
+  color: cornsilk;
+}
+
+.profile-button {
+  transition-duration: 0.4s;
+  border: none;
+  margin-top: 5px;
+  margin-right: 5px;
+  width: 30px;
+}
+
+.profile-button:hover {
+  cursor: pointer;
+}
+
+.text-home-page {
+  color: cornsilk;
+  text-align: center;
+  max-height: 15%;
+  z-index: 10000;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#cards-container {
+  max-height: 85%;
+}
+
+.button-image {
+  transition-duration: 0.4s;
+  transform: translate( -50%, -50% );
+  border: none;
+  display: flex;
+}
+
+.button-image:hover {
+  color: cornsilk;
+}
+
+.card {
+  display: flex;
+  border: transparent;
+  background-color: transparent;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.card-columns {
+  display: flex;
+  justify-content: center;
+}
+
+.card-img-top {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+
+.card-img-subtitle {
+  color: cornsilk;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.profile-page-image {
+  width: 120px;
+  height: 120px;
+}
+
