@@ -1,5 +1,6 @@
 // routes/playlist.js
 var express = require('express');
+var axios = require('axios');
 var Playlist = require('./../models/Playlist');
 var User = require('./../models/User');
 var playlistRouter = express.Router();
@@ -39,5 +40,32 @@ playlistRouter.post('/create',(req, res, next)=>{
     .catch( (err) => console.log(err));
 })
 
+playlistRouter.get('/:playlistId',(req, res, next)=>{
+    const playlistId = req.params.playlistId;
+    Playlist.findById(playlistId)
+    .then((playlist) => {
+        const tracksArr = playlist.tracks;
+        console.log("tracksArr",tracksArr);
 
+        tracksArr.forEach(track=> {
+            axios.get(`https://api.napster.com/v2.0/tracks/${track}?apikey=ZTk2YjY4MjMtMDAzYy00MTg4LWE2MjYtZDIzNjJmMmM0YTdm&limit=200`)
+            .then((result) => {
+                const trackDetailsArr = [];
+                const trackObj = {};
+                const resultArr = result.data.tracks;
+                resultArr.forEach(trackInfo =>{
+                    trackObj.trackName = trackInfo.name;
+                    trackObj.artistName = trackInfo.artistName;
+                    trackDetailsArr.push(trackObj);
+                })
+                console.log("arr",trackDetailsArr);
+                res.render("playlistDetails",{trackDetailsArr});
+            }).catch((err) => {
+                
+            });
+        });
+    }).catch((err) => {
+        
+    });
+})
 module.exports = playlistRouter;
