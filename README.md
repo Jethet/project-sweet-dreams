@@ -6,8 +6,7 @@
 
 ## Description
 
-SWEET DREAMS is an app that is designed for the user who would like to get into a relaxed mood before going to bed. For many people it is difficult to switch off after activities and just go to bed. SWEET DREAMS offers the user an easy way to play some relaxing music or ambient sounds, for a certain amount of time that the user can specify.
-There is an option to create up to three playlists for favourites.
+SWEET DREAMS is an app that is designed for the user who would like to get into a relaxed mood before going to sleep. For many people it is difficult to switch off after activities and just go to bed. SWEET DREAMS offers the user an easy way to play some relaxing music or ambient sounds, for a certain amount of time that the user can specify. There is a button to play random music ('Surprise me!') and a button that goes directly to the user's playlists, if these exist. The user has the option to create these playlists to save favourites.
 
 
 <br>
@@ -32,7 +31,7 @@ There is an option to create up to three playlists for favourites.
 ## Minimal Viable Product (MVP)
 1. Sign-up, log-in, log-out functionality.
 2. Profile page with options to add avatar/picture, dropdown menu for editing username, changing password or deleting account
-3. Homepage with clickable images that link to music playlist that starts playing immediately.
+3. Homepage with clickable images that show a music type, and that link to the player page.
 4. Player page with display of track information, timer, button to add tracks to playlist, timeline of playtime.
 5. Playlist page with an overview of user's playlist(s), buttons to edit playlist and button to add new playlist, and explanation of maximum number of playlists.
 
