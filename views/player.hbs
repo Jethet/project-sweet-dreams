@@ -3,5 +3,30 @@
 <h1>PLAYER</h1>
 
 <br><br><br>
+{{#each track}}
+    <h1>{{this.name}}</h1>
+    {{!-- <input type="button" value="PLAY" onclick="playAudio()"> --}}
+    <audio class="audio" controls>
+        <source src="{{this.previewURL}}" type="audio/mpeg">
+    </audio>
+    {{#if ../userHasPlaylists}}
+        <form action="/playlist/add/{{this.id}}" method = "POST">
+            <select name="playlist">
+                {{#each ../userInfo.playlists}}
+                    <option value="{{this.id}}">{{this.playlistName}}</option>
+                {{/each}}
+            </select>
+            <button type="submit">Add to playlist</button>
+        </form>
+    {{/if}}
+    <form action="/playlist/create" method="POST">
+        <label for="">Give a name to the playlist</label>
+        <input type="text" name="playlistName">
+        
+        <button type="submit">Create</button>
+    </form>
+{{/each}}
 
-<a href="/playlist">Playlist<s/a>
+<a href="/playlist">Playlist</a>
+
+<script src="/javascripts/playerScript.js"></script>

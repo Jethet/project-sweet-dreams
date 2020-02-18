@@ -40,4 +40,15 @@ profileRouter.get("/delete", function(req, res, next) {
       .catch(err => console.log(err));
   });
 
+profileRouter.get("/delete", function(req, res, next) {
+    // console.log('ID TO DELETE', req.params);
+    User.findOne({
+      _id: req.session.currentUser._id
+    })
+      .then(theUser => theUser.remove())
+      .then(() => req.session.destroy())
+      .then(() => res.redirect("/"))
+      .catch(err => console.log(err));
+  });
+
 module.exports = profileRouter;

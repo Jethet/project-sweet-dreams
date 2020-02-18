@@ -5,10 +5,8 @@
 <br><br>
 <h4>You can create up to three playlists</h4>
 
-<button>Playlist 1</button>
-<br>
-<button>Playlist 2</button>
-<br>
-<button>Playlist 3</button>
-<br>
-
+{{#each userdata.playlists}}
+    <a href="/playlist/{{this._id}}">
+        <button>{{this.playlistName}}</button>
+    </a>
+{{/each}}
