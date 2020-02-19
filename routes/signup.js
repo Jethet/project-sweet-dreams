@@ -15,7 +15,7 @@ signupRouter.post('/', parser.single('photo'), (req, res, next) => {
     let imageURL;
     const { username, email, password } = req.body;
     if (!req.file){
-        imageURL = '/Users/henriettehettinga/GitHub/project-sweet-dreams/public/images/user2.png';
+        imageURL = '/images/user2.png';
     } else {
       imageURL = req.file.secure_url;
     };
