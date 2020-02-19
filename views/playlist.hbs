@@ -13,10 +13,11 @@
         <h4>Create your playlists here</h4>
 
 {{#each userdata.playlists}}
+
     <a href="/playlist/{{this._id}}">
-        <button>{{this.playlistName}}</button>
+        <button style="color: cornsilk">{{this.playlistName}}</button>
     </a>
     <a href="/playlist/{{this._id}}/delete">
-        <button>delete</button>
+        <button style="color: cornsilk">delete</button>
     </a>
 {{/each}}

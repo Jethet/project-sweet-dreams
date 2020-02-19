@@ -18,23 +18,23 @@
       <br>
       <div>
         <form action="/profile/edit" id="username-update-form" method="POST">
-          <div class="form-text" style="font-size: 35px">
-            <button id="edit-username-button" style="color: cornsilk">Edit Username</button>
+          <div class="form-text" style="font-size: 35px; color: cornsilk">
+            <button class="edit-button" style="color: cornsilk">Edit Username</button>
             <div id="update-section" style="display: none">
               <input type="text" name="username" class="the-name" value="{{user.username}}">
             </div>
             <div style="font-size: 35px">
-              <button type="submit" style="color: cornsilk">Save</button>
+              <button class="edit-button" type="submit" style="color: cornsilk">Save</button>
             </div>
           </div>
         </form>
       </div>
       <div style="font-size: 35px">
-        <a href="/logout"><button style="color: cornsilk">Log out</button></a>
+        <a href="/logout"><button class="edit-button" style="color: cornsilk">Log out</button></a>
       </div>
       <br>
       <div style="font-size: 35px">
-        <a href="/profile/delete"><button style="color: cornsilk">Delete account</button></a>
+        <a href="/profile/delete"><button class="edit-button" style="color: cornsilk">Delete account</button></a>
       </div>
     </div>
 
