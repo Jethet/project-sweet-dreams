@@ -34,6 +34,19 @@ playlistRouter.post('/add/:trackId',(req, res, next)=>{
    
 })
 
+// playlistRouter.post("/:id/delete/:trackId",(req,res, next)=>{
+//     const playlistId = req.params.id;
+//     const trackId = req.params.trackId;
+//     Playlist.update({_id: playlistId},{
+//         $pull:{tracks: trackId}
+//     },{new: true})
+//     .then(() => {
+//         res.redirect(`/playlist/${playlistId}`)
+//     }).catch((err) => {
+//         console.log(err);
+//     }); 
+// })
+
 playlistRouter.post('/create',(req, res, next)=>{
     const {playlistName} = req.body;
     const id = req.session.currentUser._id;
@@ -50,12 +63,29 @@ playlistRouter.post('/create',(req, res, next)=>{
     .catch( (err) => console.log(err));
 })
 
+
+playlistRouter.get('/:playlistId/delete',(req, res, next)=>{
+    const playlistId = req.params.playlistId;
+    Playlist.findById(playlistId)
+    .then( (playlist) => {
+        console.log("playlist", playlist);
+        const pr1 = playlist.remove();
+        const pr2 = User.update({_id: req.session.currentUser._id},{
+            $pull: {playlists: playlist._id}
+        })
+        Promise.all([pr1,pr2])
+        .then( () => res.redirect(`/playlist`))
+        .catch( (err) => console.log(err));
+    })
+    .catch( (err) => console.log(err));
+})
+
 playlistRouter.get('/:playlistId',(req, res, next)=>{
     const playlistId = req.params.playlistId;
     Playlist.findById(playlistId)
     .then((playlist) => {
         const tracksArr = playlist.tracks;
-        res.render("playlistDetails",{tracksArr}); 
+        res.render("playlistDetails",{tracksArr,playlistId: playlist._id}); 
     })
     .catch(err=>console.log(err));
 })

@@ -1,0 +1,29 @@
+<a href="/home">HOME</a>
+
+<h1>PLAYER</h1>
+
+<br><br><br>
+<input style="display: none" id="playlist-id" value="{{id}}">
+<input type="button" value="PLAY" onclick="play()">
+
+
+{{#if userHasPlaylists}}
+    <form action="/playlist/add/{{this.id}}" method = "POST">
+        <select name="playlist">
+            {{#each userInfo.playlists}}
+                <option value="{{this.id}}">{{this.playlistName}}</option>
+            {{/each}}
+        </select>
+        <button type="submit">Add to playlist</button>
+    </form>
+{{/if}}
+<form action="/playlist/create" method="POST">
+    <label for="">Give a name to the playlist</label>
+    <input type="text" name="playlistName">
+    
+    <button type="submit">Create</button>
+</form>
+
+<a href="/playlist">Playlist</a>
+
+<script src="/javascripts/playerScript.js"></script>
