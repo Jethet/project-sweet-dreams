@@ -16,9 +16,9 @@ if(playlistId.value.charAt(0)=="p"){
     function playAudio() {
         var entry = playlist[i++];       // get current entry, increment i
         if (i >= playlist.length) i = 0; // if i=> length, reset
-        audioElement.src = entry;  // <- for demo samples only. 'sound/' + entry.value + '.wav';
+        audioElement.src = entry;  
         audioElement.load();             // cleanup old fun, invoke loading of new
         audioElement.play();             // cue up play
     }   
-}
+    }
 }

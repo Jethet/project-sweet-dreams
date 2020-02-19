@@ -3,13 +3,27 @@
 <h1>PLAYER</h1>
 
 <br><br><br>
-<p id="playlist-id">{{id}}</p>
+<input style="display: none" id="playlist-id" value="{{id}}">
+<input type="button" value="PLAY" onclick="play()">
+<br><br>
 {{#each track}}
-    <h1>{{this.name}}</h1>
-    {{!-- <input type="button" value="PLAY" onclick="playAudio()"> --}}
-    <audio class="audio" controls>
+    <audio style="display: none" class="audio" controls>
         <source src="{{this.previewURL}}" type="audio/mpeg">
     </audio>
+{{/each}}
+
+<form action="/playlist/create" method="POST">
+    <label for="">Give a name to the playlist</label>
+    <input type="text" name="playlistName">
+    <button type="submit">Create</button>
+</form>
+
+{{#each track}}
+    <h4>{{this.name}}</h4>
+    {{!-- <input type="button" value="PLAY" onclick="playAudio()"> --}}
+    {{!-- <audio class="audio" controls>
+        <source src="{{this.previewURL}}" type="audio/mpeg">
+    </audio> --}}
     {{#if ../userHasPlaylists}}
         <form action="/playlist/add/{{this.id}}" method = "POST">
             <select name="playlist">
@@ -20,14 +34,9 @@
             <button type="submit">Add to playlist</button>
         </form>
     {{/if}}
-    <form action="/playlist/create" method="POST">
-        <label for="">Give a name to the playlist</label>
-        <input type="text" name="playlistName">
-        
-        <button type="submit">Create</button>
-    </form>
 {{/each}}
 
 <a href="/playlist">Playlist</a>
 
 <script src="/javascripts/playerScript.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

@@ -27,25 +27,11 @@ playerRouter.get('/:id',(req, res,next)=>{
             //console.log(data.track);
             console.log("userhas playlist", userHasPlaylists);
             
-            res.render("player2",data);
+            res.render("player",data);
         })
         .catch(err => console.log(err))
     })
     .catch(err=>console.log(err))
 })
 
-// playerRouter.get('/:id',(req, res,next)=>{
-//     User.findById(req.session.currentUser._id)
-//         .populate('playlists')
-//         .then( userInfo => {
-//             let userHasPlaylists = false;
-//             if(userInfo.playlists.length !== 0) userHasPlaylists = true;
-//             const data = {
-//                 id: req.params.id,
-//                 userInfo: userInfo,
-//                 userHasPlaylists: userHasPlaylists
-//             }
-//             res.render("player2",data);
-//         })
-// })
 module.exports = playerRouter;
