@@ -1,6 +1,7 @@
 // routes/profile.js
 var express = require('express');
 var User = require('./../models/User');
+var Playlist= require('./../models/Playlist');
 var profileRouter = express.Router();
 const bcrypt = require('bcrypt')
 const zxcvbn = require("zxcvbn");
@@ -34,21 +35,16 @@ profileRouter.get("/delete", function(req, res, next) {
     User.findOne({
       _id: req.session.currentUser._id
     })
-      .then(theUser => theUser.remove())
-      .then(() => req.session.destroy())
-      .then(() => res.redirect("/"))
-      .catch(err => console.log(err));
-  });
+    .then(user=>{
+      const pr1 = Playlist.deleteMany({userId: req.session.currentUser._id})
+      const pr2 = user.remove();
 
-profileRouter.get("/delete", function(req, res, next) {
-    // console.log('ID TO DELETE', req.params);
-    User.findOne({
-      _id: req.session.currentUser._id
-    })
-      .then(theUser => theUser.remove())
+      Promise.all([pr1, pr2])
       .then(() => req.session.destroy())
       .then(() => res.redirect("/"))
       .catch(err => console.log(err));
+    })
+    .catch(err=>console.log(err))
   });
 
 module.exports = profileRouter;

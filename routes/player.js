@@ -8,6 +8,7 @@ playerRouter.get('/:id',(req, res,next)=>{
     axios.get(`https://api.napster.com/v2.0/playlists/${req.params.id}/tracks?apikey=ZTk2YjY4MjMtMDAzYy00MTg4LWE2MjYtZDIzNjJmMmM0YTdm&limit=200`)
     .then(apiResponse => {
         const track = apiResponse.data.tracks;
+        console.log(track);
         return track;
     })
     .then( track => {
@@ -18,6 +19,7 @@ playerRouter.get('/:id',(req, res,next)=>{
             if(userInfo.playlists.length !== 0) userHasPlaylists = true;
 
             const data = {
+                id: req.params.id,
                 track: track,
                 userInfo: userInfo,
                 userHasPlaylists: userHasPlaylists

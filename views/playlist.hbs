@@ -12,20 +12,11 @@
         <br>
         <h4>Create your playlists here</h4>
 
-        {{#each userdata.playlists}}
-        <a href="/playlist/{{this._id}}">
-            <button>{{this.playlistName}}</button>
-        </a>
-        {{/each}}
-
-<br><br><br> <br><br><br>
-<h1>this</h1>
-<br><br><br> <br><br><br>
-<h1>that</h1>
-<br><br><br> <br><br><br>
-<h1>what</h1>
-<br><br><br> <br><br><br>
-<h1>whatever</h1>
-    </div>
-</div>
-</div>
+{{#each userdata.playlists}}
+    <a href="/playlist/{{this._id}}">
+        <button>{{this.playlistName}}</button>
+    </a>
+    <a href="/playlist/{{this._id}}/delete">
+        <button>delete</button>
+    </a>
+{{/each}}

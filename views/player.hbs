@@ -1,41 +1,35 @@
-<div id="background-image-player">
-    
-      <div class="player-body">
-        <div id="home-button-div">
-            <a href="/home" class="btn">
-                <img src="/images/homelink.png" class="profile-button" alt="HOME">
-            </a>
-        </div>
+<a href="/home">HOME</a>
 
-        <h1 id="h1-player" style="font-size: 50px">PLAYER</h1>
+<h1>PLAYER</h1>
 
-      
-        {{#each track}}
-        <h1>{{this.name}}</h1>
-        {{!-- <input type="button" value="PLAY" onclick="playAudio()"> --}}
-        <audio class="audio" controls>
-            <source src="{{this.previewURL}}" type="audio/mpeg">
-        </audio>
-        {{#if ../userHasPlaylists}}
-        <form action="/playlist/add/{{this.id}}" method="POST">
+<br><br><br>
+<div id="addAudio">
+    <input style="display: none" id="playlist-id" value="{{id}}">
+    <input type="button" value="PLAY" onclick="play()">
+</div>
+<br><br>
+
+<form action="/playlist/create" method="POST">
+    <label for="">Give a name to the playlist</label>
+    <input type="text" name="playlistName">
+    <button type="submit">Create</button>
+</form>
+
+{{#each track}}
+    <h4>{{this.name}}</h4>
+    {{#if ../userHasPlaylists}}
+        <form action="/playlist/add/{{this.id}}" method = "POST">
             <select name="playlist">
                 {{#each ../userInfo.playlists}}
-                <option value="{{this.id}}">{{this.playlistName}}</option>
+                    <option value="{{this.id}}">{{this.playlistName}}</option>
                 {{/each}}
             </select>
-            <button class="create-playlist" type="submit">Add to playlist</button>
+            <button type="submit">Add to playlist</button>
         </form>
-        {{/if}}
-        <form action="/playlist/create" method="POST">
-            <label class="create" for="">Give a name to the playlist</label>
-            <input type="text" name="playlistName">
+    {{/if}}
+{{/each}}
 
-            <button class="create-playlist" type="submit">Create</button>
-        </form>
-        {{/each}}
+<a href="/playlist">Playlist</a>
 
-        <a href="/playlist">Playlist</a>
-
-        <script src="/javascripts/playerScript.js"></script>
-    </div>
-</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/javascripts/playerScript.js"></script>

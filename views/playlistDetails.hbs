@@ -4,8 +4,11 @@
     <br>
     <p>ArtistName {{this.trackArtist}}</p>
     <br>
+    {{!-- <form action="/playlist/{{../playlistId}}/delete/{{this.trackId}}" method="POST">
+        <button type="submit">Delete</button>
+    </form> --}}
 {{/each}}
 
-<a href="/player/id">
+<a href="/player/{{playlistId}}">
     <button>Play the playlist</button>
 </a>
