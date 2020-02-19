@@ -1,14 +1,6 @@
 <h1>playlist Details</h1>
 {{#each tracksArr}}
-    <p>TrackName {{this.trackName}}</p>
+    <h5>TrackName: {{this.trackName}}</h5>
+    <h5>ArtistName: {{this.trackArtist}}</h5>
     <br>
-    <p>ArtistName {{this.trackArtist}}</p>
-    <br>
-    {{!-- <form action="/playlist/{{../playlistId}}/delete/{{this.trackId}}" method="POST">
-        <button type="submit">Delete</button>
-    </form> --}}
 {{/each}}
-
-<a href="/player/{{playlistId}}">
-    <button>Play the playlist</button>
-</a>

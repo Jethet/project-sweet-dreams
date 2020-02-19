@@ -236,3 +236,20 @@ body, html {
   border-radius: 50%;
 }
 
+
+
+
+
+
+
+
+#nav-bar{
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.track-container{
+  display: flex;
+
+}

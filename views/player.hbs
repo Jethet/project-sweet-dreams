@@ -1,4 +1,7 @@
-<a href="/home">HOME</a>
+<div id="nav-bar">
+    <a href="/home">HOME</a>
+    <a href="/playlist">Playlist</a>
+</div>
 
 <h1>PLAYER</h1>
 
@@ -16,20 +19,21 @@
 </form>
 
 {{#each track}}
-    <h4>{{this.name}}</h4>
-    {{#if ../userHasPlaylists}}
-        <form action="/playlist/add/{{this.id}}" method = "POST">
-            <select name="playlist">
-                {{#each ../userInfo.playlists}}
-                    <option value="{{this.id}}">{{this.playlistName}}</option>
-                {{/each}}
-            </select>
-            <button type="submit">Add to playlist</button>
-        </form>
-    {{/if}}
+    <div class="track-container">
+        <h4>{{this.name}}</h4>
+        {{#if ../userHasPlaylists}}
+            <form action="/playlist/add/{{this.id}}" method = "POST">
+                <select name="playlist">
+                    {{#each ../userInfo.playlists}}
+                        <option value="{{this.id}}">{{this.playlistName}}</option>
+                    {{/each}}
+                </select>
+                <button type="submit">Add to playlist</button>
+            </form>
+        {{/if}}
+    </div>
 {{/each}}
 
-<a href="/playlist">Playlist</a>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/javascripts/playerScript.js"></script>
