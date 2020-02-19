@@ -233,6 +233,6 @@ body, html {
 .profile-page-image {
   width: 120px;
   height: 120px;
-  radius: 50%;
+  border-radius: 50%;
 }
 
