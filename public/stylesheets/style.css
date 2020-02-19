@@ -39,10 +39,21 @@ a {
   background-size: cover;
 }
 
+#background-image-profile {
+  height: 100vh;
+  background-image: url("/images/road.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .form-size {
   width: 80%;
-  padding: 75px 25px;
+  padding-top: 75px;
   color: cornsilk;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
  }
 
 #login-submit-button {
@@ -60,8 +71,17 @@ a {
   font-size: 16px;
 }
 
-.form-group {  
-  font-size: 20px;
+.signin-link {
+  width: 80%;
+  padding: 75px 25px;
+  color: cornsilk;
+  font-size: 35px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a:hover {
+  cursor: pointer;
 }
 
 .text-index-page {
@@ -70,6 +90,15 @@ a {
   padding: 75px;
   max-height: 80%;
 }
+
+.signup-link {
+  font-size: 25px;
+  font-weight: bolder;
+  font-size: 35px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 .index-page-button {
   transition-duration: 0.4s;
@@ -89,25 +118,6 @@ a {
   color: cornsilk;
 }
 
-.signup-link {
-  color: cornsilk;
-  font-size: 25px;
-  font-weight: bolder;
-}
-
-
-.profile-button {
-  transition-duration: 0.4s;
-  border: none;
-  margin-top: 5px;
-  margin-right: 5px;
-  width: 30px;
-}
-
-.profile-button:hover {
-  cursor: pointer;
-}
-
 .text-home-page {
   color: cornsilk;
   text-align: center;
@@ -116,7 +126,6 @@ a {
   /* padding-left: 20px; */
   padding-right: 20px;
 }
-
 
 #cards-container {
   max-height: 85%;
@@ -160,6 +169,27 @@ a {
   font-weight: bold;
 }
 
+
+.profile-form {
+  width: 80%;
+  padding-top: 75px;
+  color: cornsilk;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile-button {
+  transition-duration: 0.4s;
+  border: none;
+  margin-top: 5px;
+  margin-right: 5px;
+  width: 30px;
+}
+
+.profile-button:hover {
+  cursor: pointer;
+}
 .profile-page-image {
   width: 120px;
   height: 120px;

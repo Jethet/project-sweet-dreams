@@ -3,7 +3,7 @@
         <div class="form-size">
 
             <form action="/login" method="POST">
-                <h2 style="font-size: 50px">Login</h2>
+                <h2 style="font-size: 60px">Login</h2>
                 <br>
                 <div class="form-group row">
                     <label for="email" class="col-2 col-form-label">Email:</label>
@@ -18,13 +18,13 @@
                     </div>
                 </div>
                 <button type="submit" id="login-submit-button">Submit</button>
-                <br>
-                <br>
-            <div class="signup-link">
-            <a href="/signup">Don't have an account? Sign up!</a>
-        </div>
+        
+                <div class="signin-link" style="text-align: center">
+                    <p>Don't have an account?</p>
+                    <a href="/signup" style="color: cornsilk">Sign up!</a>
+                </div>
             </form>
-            
+
         </div>
         {{#if errorMessage}}
 
@@ -32,7 +32,7 @@
 
         {{/if}}
 
-        
+
 
     </div>
 </div>
