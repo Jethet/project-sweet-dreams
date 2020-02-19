@@ -1,9 +1,16 @@
+<div>
+    <div id="background-image-playlist">
 
-<a href="/home">HOME</a>
+        <div id="home-button-div" style="overflow-y: scroll">
+            <a href="/home" class="btn">
+                <img src="/images/homelink.png" class="profile-button" alt="HOME">
+            </a>
+        </div>
 
-<h1>My playlists</h1>
-<br><br>
-<h4>You can create up to three playlists</h4>
+        <div class="playlist-body">
+        <h1 id="h1-player" style="font-size: 50px">My playlists</h1>
+        <br>
+        <h4>Create your playlists here</h4>
 
 {{#each userdata.playlists}}
     <a href="/playlist/{{this._id}}">

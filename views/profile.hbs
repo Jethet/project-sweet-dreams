@@ -1,33 +1,45 @@
 <div>
   <div id="background-image-profile">
-    <div class="profile-form">
-      <h1 style="font-size: 60px">My profile</h1>
 
-      <br><br>
-
-      <img src="/images/user2.png" class="profile-page-image" alt="">
-
-      <p>Username</p>
-
-      <form action="/profile/edit" id="username-update-form" method="POST">
-
-        <button id="edit-username-button">Edit Username</button>
-        <div id="update-section" style="display: none">
-          <input type="text" name="username" class="the-name" value="{{user.username}}"><br>
-        </div>
-
-        <button type="submit">Save</button>
-      </form>
-
-      <br>
-      <br>
-
-      <a href="/logout"><button>Log out</button></a>
-      <br>
-
-      <a href="/profile/delete"><button>Delete account</button></a>
+    <div id="home-button-div">
+      <a href="/home" class="btn">
+        <img src="/images/homelink.png" class="profile-button" alt="HOME">
+      </a>
     </div>
+
+    <div id="profile-form">
+      <div>
+        <h1 style="font-size: 60px">My profile</h1>
+      </div>
+      <br><br>
+      <div>
+        <img src="{{ user.imageURL }}" class="profile-page-image" alt="">
+      </div>
+      <br>
+      <div>
+        <form action="/profile/edit" id="username-update-form" method="POST">
+          <div class="form-text" style="font-size: 35px">
+            <button id="edit-username-button" style="color: cornsilk">Edit Username</button>
+            <div id="update-section" style="display: none">
+              <input type="text" name="username" class="the-name" value="{{user.username}}">
+            </div>
+            <div style="font-size: 35px">
+              <button type="submit" style="color: cornsilk">Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div style="font-size: 35px">
+        <a href="/logout"><button style="color: cornsilk">Log out</button></a>
+      </div>
+      <br>
+      <div style="font-size: 35px">
+        <a href="/profile/delete"><button style="color: cornsilk">Delete account</button></a>
+      </div>
+    </div>
+
   </div>
+
   <script src="/javascripts/profile.js"></script>
-</div>
+
 </div>
