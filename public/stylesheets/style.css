@@ -62,7 +62,7 @@ body, html {
 
 #background-image-player {
   height: 100vh;
-  background-image: url("/images/abstract.jpg");
+  background-image: url("/images/rings.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -254,10 +254,48 @@ body, html {
 
 #nav-bar{
   display: flex;
-  padding: 10px;
+  /* padding: 10px; */
   justify-content: space-between;
 }
 
-.track-container{
-  display: flex;
+.player-button {
+  background-color: #fffffe;
+  color: black;
+  border-radius: 15%;
+  transition-duration: 0.4s;
+  margin-top: 10px;
+}
+
+.player-button:hover{
+  cursor: pointer;
+}
+
+#playlist-button{
+  background-color: #fffffe;
+  color: black;
+  border-radius: 15%;
+  transition-duration: 0.4s;
+  margin-top: 10px;
+}
+
+.playlist-button:hover{
+  cursor: pointer;
+}
+
+#player-body{
+  width: 80%;
+  padding-top: 50px;
+  color: cornsilk;
+  font-size: 20px;
+  /* text-align: center; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#addAudio{
+  background-color: #fffffe;
+  color: black;
+  border-radius: 15%;
+  transition-duration: 0.4s;
+  margin-top: 10px;
 }
