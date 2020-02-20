@@ -1,6 +1,27 @@
-<h1>playlist Details</h1>
-{{#each tracksArr}}
-    <h5>TrackName: {{this.trackName}}</h5>
-    <h5>ArtistName: {{this.trackArtist}}</h5>
-    <br>
-{{/each}}
+<div id="playlist-details-body">
+    <div id="background-image-playlist-details">
+
+        <div id="nav-bar">
+            <div id="home-button-div" style="overflow-y: scroll">
+                <a href="/home" class="btn">
+                    <img src="/images/homelink-white.png" class="profile-button" alt="HOME">
+                </a>
+            </div>
+            <div class="playlist-nav-button">
+                <a href="/playlist" style="color: cornsilk">Playlist</a>
+            </div>
+    </div>
+
+    <div id="player-body" style="color: rgb(250, 249, 248)">
+        <h1 style="font-size: 60px">Tracks</h1>
+        <br>
+        <div class="track-details">
+        {{#each tracksArr}}
+        <h4>TrackName: {{this.trackName}}</h4>
+        <h4>ArtistName: {{this.trackArtist}}</h4>
+        <br>
+        {{/each}}
+        </div>
+    </div>
+</div>
+</div>

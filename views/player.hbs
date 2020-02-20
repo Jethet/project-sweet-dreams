@@ -1,16 +1,18 @@
 <div>
     <div id="background-image-player">
-        <div id="player-body">
+        
             <div id="nav-bar">
                 <div id="home-button-div" style="overflow-y: scroll">
                     <a href="/home" class="btn">
                         <img src="/images/homelink-white.png" class="profile-button" alt="HOME">
                     </a>
                 </div>
-                <a href="/playlist">Playlist</a>
+                <div class="playlist-nav-button">
+                <a href="/playlist" style="color: cornsilk">Playlist</a>
+                </div>
             </div>
-
-            <h1>PLAYER</h1>
+            <div id="player-body">
+            <h1 style="font-size: 60px">Player</h1>
 
             <div id="addAudio">
                 <input style="display: none" id="playlist-id" value="{{id}}">
@@ -21,7 +23,7 @@
             <form action="/playlist/create" method="POST">
                 <label for="">Give a name to the playlist</label>
                 <input type="text" name="playlistName">
-                <button type="submit">Create</button>
+                <button type="submit" style="color: cornsilk">Create</button>
             </form>
 
             {{#each track}}

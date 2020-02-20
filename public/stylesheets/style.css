@@ -72,6 +72,18 @@ body, html {
   background-attachment: fixed;
 }
 
+#background-image-playlist-details {
+  height: 100vh;
+  background-image: url("/images/white-headphone.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden; 
+  overflow-x: auto; 
+  text-align:justify; 
+  background-attachment: fixed;
+}
+
 .form-size {
   width: 80%;
   padding-top: 75px;
@@ -266,11 +278,46 @@ body, html {
   margin-top: 10px;
 }
 
-.player-button:hover{
+.player-button:hover {
   cursor: pointer;
 }
 
-#playlist-button{
+#playlist-button {
+  color: black;
+  border-radius: 15%;
+  transition-duration: 0.4s;
+  border: none;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+
+.playlist-button:hover {
+  cursor: pointer;
+}
+
+.playlist-nav-button{
+  color: black;
+  border-radius: 15%;
+  transition-duration: 0.4s;
+  border: none;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.playlist-nav-button:hover {
+  cursor: pointer;
+}
+
+#player-body {
+  width: 80%;
+  color: cornsilk;
+  font-size: 20px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#addAudio {
   background-color: #fffffe;
   color: black;
   border-radius: 15%;
@@ -278,24 +325,17 @@ body, html {
   margin-top: 10px;
 }
 
-.playlist-button:hover{
-  cursor: pointer;
-}
-
-#player-body{
-  width: 80%;
-  padding-top: 50px;
-  color: cornsilk;
+#playlist-details-body {  
+  /* width: 80%; */
+  /* color: rgb(194, 179, 121); */
   font-size: 20px;
   /* text-align: center; */
   margin-left: auto;
   margin-right: auto;
 }
 
-#addAudio{
-  background-color: #fffffe;
-  color: black;
-  border-radius: 15%;
-  transition-duration: 0.4s;
-  margin-top: 10px;
+.track-details {
+  margin-bottom: 5px;
+  font-size: 25px;
+
 }
