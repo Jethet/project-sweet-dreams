@@ -60,6 +60,19 @@ body, html {
   background-attachment: fixed;
 }
 
+#background-image-player {
+  height: 100vh;
+  background-image: url("/images/abstract.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden; 
+  overflow-x: auto; 
+  text-align:justify; 
+  background-attachment: fixed;
+  color: cornsilk;
+}
+
 .form-size {
   width: 80%;
   padding-top: 75px;

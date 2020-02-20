@@ -1,39 +1,47 @@
-<div id="nav-bar">
-    <a href="/home">HOME</a>
-    <a href="/playlist">Playlist</a>
-</div>
+<div>
+    <div id="background-image-player">
+        
+        <div id="nav-bar">
+            <div id="home-button-div" style="overflow-y: scroll">
+            <a href="/home" class="btn">
+                <img src="/images/homelink.png" class="profile-button" alt="HOME">
+            </a>
+            </div>
+            <a href="/playlist">Playlist</a>
+        </div>
 
-<h1>PLAYER</h1>
+        <h1>PLAYER</h1>
 
-<br><br><br>
-<div id="addAudio">
-    <input style="display: none" id="playlist-id" value="{{id}}">
-    <input type="button" value="PLAY" onclick="play()">
-</div>
-<br><br>
+        <div id="addAudio">
+            <input style="display: none" id="playlist-id" value="{{id}}">
+            <input type="button" value="PLAY" onclick="play()">
+        </div>
+        <br><br>
 
-<form action="/playlist/create" method="POST">
-    <label for="">Give a name to the playlist</label>
-    <input type="text" name="playlistName">
-    <button type="submit">Create</button>
-</form>
+        <form action="/playlist/create" method="POST">
+            <label for="">Give a name to the playlist</label>
+            <input type="text" name="playlistName">
+            <button type="submit">Create</button>
+        </form>
 
-{{#each track}}
-    <div class="track-container">
-        <h4>{{this.name}}</h4>
-        {{#if ../userHasPlaylists}}
-            <form action="/playlist/add/{{this.id}}" method = "POST">
+        {{#each track}}
+        <div class="track-container">
+            <h4>{{this.name}}</h4>
+            {{#if ../userHasPlaylists}}
+            <form action="/playlist/add/{{this.id}}" method="POST">
                 <select name="playlist">
                     {{#each ../userInfo.playlists}}
-                        <option value="{{this.id}}">{{this.playlistName}}</option>
+                    <option value="{{this.id}}">{{this.playlistName}}</option>
                     {{/each}}
                 </select>
                 <button type="submit">Add to playlist</button>
             </form>
-        {{/if}}
+            {{/if}}
+        </div>
+        {{/each}}
+
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="/javascripts/playerScript.js"></script>
     </div>
-{{/each}}
-
-
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="/javascripts/playerScript.js"></script>
+</div>
