@@ -6,17 +6,16 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger        =  require('morgan');
 const router = require('./routes/index');
-const dotenv = require("dotenv");
 
-dotenv.config();
-// require('dotenv').config();
+require('dotenv').config();
 const app = express();
 
 const session    = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 
-mongoose
-  .connect(process.env.MONGODB_URI, {useNewUrlParser: true})
+// mongoose
+//   .connect(process.env.MONGODB_URI, {useNewUrlParser: true})
+mongoose.connect(config.DB,{ useMongoClient:true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
