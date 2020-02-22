@@ -1,10 +1,15 @@
-<div>
+<div id="playlist-body">
     <div id="background-image-playlist">
 
-        <div id="home-button-div" style="overflow-y: scroll">
-            <a href="/home" class="btn">
-                <img src="/images/homelink.png" class="profile-button" alt="HOME">
-            </a>
+         <div id="nav-bar">
+            <div id="home-button-div" style="overflow-y: scroll">
+                <a href="/home" class="btn">
+                    <img src="/images/homelink-white.png" class="profile-button" alt="HOME">
+                </a>
+            </div>
+            <div class="playlist-nav-button">
+                <a href="/playlist" style="color: cornsilk">Playlist</a>
+            </div>
         </div>
 
         <div class="playlist-body">
@@ -14,11 +19,12 @@
 {{#each userdata.playlists}}
 
     <a href="/playlist/{{this._id}}">
-        <button style="color: cornsilk">{{this.playlistName}}</button>
+        <button class="playlist-button">{{this.playlistName}}</button>
     </a>
     <a href="/playlist/{{this._id}}/delete">
-        <button style="color: cornsilk">delete</button>
+        <button class="playlist-button">delete</button>
     </a>
     <br>
     <br>
 {{/each}}
+</div>
