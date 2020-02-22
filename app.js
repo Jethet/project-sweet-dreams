@@ -6,8 +6,10 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger        =  require('morgan');
 const router = require('./routes/index');
+const dotenv = require("dotenv");
 
-require('dotenv').config();
+dotenv.config();
+// require('dotenv').config();
 const app = express();
 
 const session    = require("express-session");
