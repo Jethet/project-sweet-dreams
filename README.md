@@ -110,7 +110,6 @@ Playlist model
 
 ### Git
 
-The url to your repository and to your deployed project
 
 [Repository Link](https://github.com/Jethet/project-sweet-dreams)
 
@@ -123,7 +122,5 @@ The url to your repository and to your deployed project
 
 
 ### Slides
-
-The url to your presentation slides
 
 [Slides Link]()
