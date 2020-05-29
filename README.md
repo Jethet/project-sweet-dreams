@@ -6,7 +6,7 @@
 
 ## Description
 
-SWEET DREAMS is an app that is designed for the user who would like to get into a relaxed mood before going to sleep. For many people it is difficult to switch off after activities and just go to bed. SWEET DREAMS offers the user an easy way to play some relaxing music or ambient sounds, for a certain amount of time that the user can specify. There is a button to play random music ('Surprise me!') and a button that goes directly to the user's playlists, if these exist. The user has the option to create these playlists to save favourites.
+The SWEET DREAMS app is designed for the user who would like to get into a relaxed mood before going to sleep. For many people it is difficult to switch off after activities and just go to bed. SWEET DREAMS offers the user an easy way to play some relaxing music or ambient sounds, for a certain amount of time that the user can specify. There is a button to play random music ('Surprise me!') and a button that goes directly to the user's playlists, if these exist. The user has the option to create these playlists to save favourites.
 
 
 <br>
